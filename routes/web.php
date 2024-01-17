@@ -46,3 +46,30 @@ Route::get("/post/{id}", function ($id) {
     ] ;
     return view("home.post" , ['posts' => $posts[$id]]);
 });
+
+$data = [
+    1 =>  [ 
+        "title"=> "User1",
+        'name' => 'Jesuraja Deepak',
+        "dob" => '1996-10-26'
+    ],
+    2=> [ 
+        "title"=> "User2",
+        'name' => 'Abishake',
+        "dob" => '2001-08-28'
+    ],
+    3=> [ 
+        "title"=> "User3",
+        'name' => 'Paulraj',
+        "dob" => '1960-08-28'
+    ],
+    4=> [ 
+        "title"=> "User4",
+        'name' => 'Rani',
+        "dob" => '1965-08-28'
+    ]
+] ;
+
+Route::get('/foreach', function () use($data){ 
+    return view('home.foreach', ['data'=> $data]);
+});
