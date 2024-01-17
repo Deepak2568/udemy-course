@@ -13,23 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/', function () {
-    return "Hello Welcome to Jesuraja Deepak";
-});
-
-Route::get("/index", function () {
-    return view("index");
-})->name("/welcome"); 
-
-// using redirect method for route dynamically
-Route::get("/hello", function () {
-    return redirect()->route("/welcome");
-});
-
-Route::get("/greet/{name}", function ($name) {
-    return "Welcome to Laravel Course ".$name."";
+    return view('welcome');
 });
