@@ -17,19 +17,32 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return "Hello Welcome to Jesuraja Deepak";
+// Route::get('/', function () {
+//     return view("welcome");
+// });
+
+// inhertitance template and layouts
+Route::get("/", function () {
+    return view("home.index");
 });
 
-Route::get("/index", function () {
-    return view("index");
-})->name("/welcome"); 
-
-// using redirect method for route dynamically
-Route::get("/hello", function () {
-    return redirect()->route("/welcome");
+Route::get("/contact", function () {
+    return view("home.contact");
 });
 
-Route::get("/greet/{name}", function ($name) {
-    return "Welcome to Laravel Course ".$name."";
+Route::get("/post/{id}", function ($id) { 
+    $posts = [
+        1 =>  [ 
+            "title"=> "Welome",
+            'name' => 'Jesuraja Deepak',
+            "is_new" => true,
+            "has_element" => 1
+        ],
+        2=> [ 
+            "title"=> "Contact",
+            'name' => 'Jesuraja Deepak Contact',
+            "is_new" => false
+        ]
+    ] ;
+    return view("home.post" , ['posts' => $posts[$id]]);
 });
