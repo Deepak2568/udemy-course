@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\SingleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +20,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Controller can group related request handling logic into a single class
+// It is a main part of the laravel framework
+// C statnds for Controller
+
+Route::get('/home',[HomeController::class,'index'])->name('c.home');
+Route::get('/about',[HomeController::class,'about'])->name('c.about');
+
+// single Action Controller
+Route::get('/invoke',SingleController::class);
+
+// Resource Controller
+Route::resource('user', ResourceController::class)->only('index','show');
+// Route::resource('user', ResourceController::class)->except('index','show');
+// Route::resource('user', ResourceController::class);
