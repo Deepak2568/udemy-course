@@ -16,3 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Tinker is a command line tool. It is used to create a data and insert into database manually
+// save()
+// delete()
+// find()
+// make()
+// create()
+
+// Collections : 
+// collection class is a poweful laravel wrapper on array type
+// Collections have lot of handly method that allows to filtering, sorting and other array specific.
+// ->first() - it is used to take the first record of the database.
+// ->count()
