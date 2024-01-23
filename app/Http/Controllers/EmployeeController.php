@@ -76,7 +76,7 @@ class EmployeeController extends Controller
         // $request->validate([
         //     'first_name' => 'required|min:5|max:25',
         //     'last_name'=> 'required|min:5|max:25',
-        //     'email' => 'required|unique:employees,email,'.$request->id.'',
+        //     'email' => 'required|unique:employees,email,'.$id.'|email',
         //     'mobile_number' => 'required',
         //     'designation'=> 'required',
         //     'company_name'=> 'required',
