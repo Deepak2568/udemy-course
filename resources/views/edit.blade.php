@@ -8,7 +8,7 @@
         <h4 class="text-center">Update Employee Details</h4>
         <a href="{{route('employee.index')}}" class="btn btn-danger back_employee"><i class="fa fa-back"></i> Back</a>
         <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" value={{$editemp->first_name}}>
+        <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" value={{trim($editemp->first_name)}}>
         @if($errors->has('first_name'))
             <span class="text-danger">{{$errors->first('first_name')}}</span>
         @endif

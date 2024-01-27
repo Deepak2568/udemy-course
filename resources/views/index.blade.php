@@ -32,7 +32,7 @@
     </thead>
     @forelse ($employees as $key => $emp)
     <tbody>
-        <td>{{$key+1}}</td>
+        <td>{{$emp->id}}</td>
         <td>{{$emp->first_name.' '.$emp->last_name}}</td>
         <td>{{$emp->email}}</td>
         <td>{{$emp->mobile_number}}</td>
@@ -55,4 +55,7 @@
     </tbody> 
     @endforelse
 </table>
+<div>
+    {{$employees->links()}}
+</div>
 @endsection

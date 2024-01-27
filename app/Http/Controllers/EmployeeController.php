@@ -12,7 +12,12 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        return view("index",['employees' => Employee::all()]);
+        // return all
+        // return view("index",['employees' => Employee::all()]);
+
+        // return data using pagination
+        return view("index",['employees' => Employee::paginate("2")]);
+
     }
 
     /**
@@ -63,6 +68,8 @@ class EmployeeController extends Controller
     public function edit(string $id)
     {
        $employee = Employee::find($id);
+    //    dd($employee);
+
        return view("edit",["editemp"=> $employee]);
     }
 
