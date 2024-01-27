@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DeleteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public_storage');
 });
+
+Route::get('/delete/public',[DeleteController::class,'publice_delete'])->name('public');
+Route::get('/delete/storage',[DeleteController::class,'publice_storage'])->name('storage');
